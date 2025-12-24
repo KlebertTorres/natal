@@ -69,7 +69,7 @@ setInterval(nextImage, 4000);
 
 function createMemoryGame() {
     const game = document.getElementById('game');
-    const cards = ['❤️', '💕', '💖', '💘', '💝', '💞', '💓', '💗', '❤️', '💕', '💖', '💘', '💝', '💞', '💓', '💗'];
+    const cards = ['❤️', '💕', '💖', '💘', '❤️', '💕', '💖', '💘'];
     cards.sort(() => Math.random() - 0.5);
     let flippedCards = [];
     let matchedCards = 0;

@@ -559,7 +559,7 @@ footer {
   }
   
   .game {
-    grid-template-columns: repeat(3, 70px);
+    grid-template-columns: repeat(2, 70px);
     gap: 10px;
   }
   
