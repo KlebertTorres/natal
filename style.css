@@ -1,0 +1,611 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+  color: #880e4f;
+  line-height: 1.6;
+}
+
+/* LOGIN */
+#login {
+  background: linear-gradient(135deg, #f8bbd9, #fce4ec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* MUSIC CONTROL */
+#music-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.music-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff80ab, #ff4081);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255,64,129,0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.music-btn:hover { transform: translateY(-3px); }
+
+.music-btn.playing { background: linear-gradient(135deg, #8e24aa, #d81b60); }
+
+.music-info {
+  text-align: left;
+  color: #6a0036;
+}
+
+.music-title {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #e91e63;
+}
+
+.music-artist {
+  font-size: 0.85em;
+  color: #880e4f;
+  margin-top: 4px;
+  letter-spacing: 0.6px;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 2px solid #e91e63;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #c2185b;
+}
+
+.login-box button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+/* GERAL */
+header {
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+header h1 {
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #e91e63;
+}
+
+header p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: auto;
+  color: #ad1457;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1s ease-in;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #e91e63;
+  margin-bottom: 40px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTADOR */
+#contador {
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  color: #e91e63;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 4px solid #e91e63;
+  padding-left: 40px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #e91e63, #c2185b);
+}
+
+.evento {
+  margin-bottom: 50px;
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.evento:hover {
+  transform: translateY(-5px);
+}
+
+.evento::before {
+  content: '💖';
+  position: absolute;
+  left: -50px;
+  top: 20px;
+  font-size: 1.5em;
+}
+
+.evento img {
+  width: 150px;
+  border-radius: 15px;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.evento img:hover {
+  transform: scale(1.05);
+}
+
+.evento h3 {
+  color: #e91e63;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* CARROSSEL */
+.carousel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.carousel img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* JOGO */
+.game {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 15px;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  color: white;
+  font-size: 2em;
+}
+
+.card-back {
+  background: white;
+  color: #e91e63;
+  transform: rotateY(180deg);
+  font-size: 2em;
+}
+
+.card.matched {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+#premio {
+  display: none;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  color: #e91e63;
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* PRESENTES */
+#presentes-container {
+  margin-top: 40px;
+  animation: fadeIn 0.8s ease;
+}
+
+.presentes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.presente-item {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.presente-item:hover {
+  transform: scale(1.1);
+}
+
+.presente-box {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+  transition: all 0.3s ease;
+  border: 3px solid #e91e63;
+}
+
+.presente-box-fechada {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  cursor: pointer;
+  color: white;
+}
+
+.presente-item.presente-fechado p {
+  font-size: 0.9em;
+}
+
+.presente-item.presente-aberto {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.presente-item.presente-aberto .presente-box {
+  opacity: 0;
+}
+
+.presente-item:hover .presente-box {
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.5);
+  transform: translateY(-5px);
+}
+
+.presente-item p {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #e91e63;
+  margin: 0;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close {
+  color: #e91e63;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #c2185b;
+}
+
+#modal-body {
+  font-size: 1.2em;
+  color: #880e4f;
+  line-height: 1.8;
+}
+
+#modal-body h3 {
+  color: #e91e63;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#modal-body .emoji-grande {
+  font-size: 5em;
+  margin: 20px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.8);
+  color: #ad1457;
+  font-weight: 300;
+  border-top: 2px solid #e91e63;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+  section h2 {
+    font-size: 2em;
+  }
+  .carousel {
+    height: 250px;
+  }
+  .carousel img {
+    width: 250px;
+    height: 250px;
+  }
+  .game {
+    grid-template-columns: repeat(4, 80px);
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+  .timeline {
+    padding-left: 20px;
+  }
+  .evento::before {
+    left: -30px;
+  }
+  
+  .presentes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .presente-box {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .modal-content {
+    width: 85%;
+    margin: 30% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  
+  #music-control {
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .music-info {
+    text-align: center;
+  }
+  
+  header {
+    padding: 40px 15px;
+  }
+  
+  header h1 {
+    font-size: 1.8em;
+  }
+  
+  header p {
+    font-size: 1em;
+  }
+  
+  section {
+    padding: 40px 15px;
+  }
+  
+  section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  
+  .carousel {
+    height: 200px;
+  }
+  
+  .carousel img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .game {
+    grid-template-columns: repeat(3, 70px);
+    gap: 10px;
+  }
+  
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .card-front, .card-back {
+    font-size: 1.5em;
+  }
+  
+  .evento img {
+    width: 120px;
+  }
+  
+  .timeline {
+    padding-left: 15px;
+  }
+  
+  .evento::before {
+    left: -25px;
+    font-size: 1.2em;
+  }
+  
+  .presente-box {
+    width: 100px;
+    height: 100px;
+    font-size: 3em;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 30px 20px;
+    margin: 20% auto;
+  }
+  
+  #modal-body h3 {
+    font-size: 1.5em;
+  }
+  
+  #modal-body .emoji-grande {
+    font-size: 3em;
+  }
+  
+  footer {
+    padding: 30px 15px;
+  }
+}

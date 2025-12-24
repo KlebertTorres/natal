@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login">
+        <div class="login-box">
+        <h2>Bem Vinda, meu Amoor ❤️</h2>
+        <p>Dica da senha: Data Especial</p>
+        <input type="password" id="password" placeholder="Digite a senha">
+        <button id="enterBtn">Entrar</button>   
+        <p id="error-message" style="color: red; display: none;">Senha incorreta. Tente novamente!</p>
+        </div>
+    </div>
+
+<div id="content" style="display: none;">
+  <div id="music-control">
+    <button id="musicBtn" class="music-btn">▶️</button>
+    <div class="music-info">
+      <div class="music-title">No futuro</div>
+      <div class="music-artist">GRAZYELE SYNTIA DA SILVA TORRES</div>
+    </div>
+    <audio id="romantic-audio" src="test1.mp3"></audio>
+  </div>
+<header>
+    <h1>Nossa História ❤️</h1>
+    <p>Nossa história começou na escola, muitos casais nem conseguem chegar onde chegamos hoje e poucos conseguem casar, desejo de todo coração
+        que nossa história vá muito, mas muito longe, que ninguém e nenhuma dificuldade consiga separar o que construímos juntos e oque ainda vamos construir.
+        você é minha melhor amiga, minha confidente, minha parceira de vida. Eu sempre soube que você tinha uma queda por mim desde o primeiro ano, você negava, mas eu sabia.
+        Dava para perceber, kkkkkk.
+        
+        Obrigado por tudo, por cada momento, por cada sorriso, por cada abraço, por cada palavra de apoio e carinho.
+        Você é a pessoa mais incrível que eu já conheci e eu sou eternamente grato por ter você na minha vida.
+        Obrigado por esse natal especial, por está me dando a oportunidade de te fazer feliz novamente. Não vou me alongar muito quero que desfrute desse presente com todo amor que eu sinto por você.
+        leia tudo com calma, cada detalhe foi pensado com muito carinho para você. Te amooo demais meu amoor!
+    </p>
+</header>
+
+<section>
+    <div id="contador"></div>
+</section>
+
+<section>
+    <h2>Linha do Tempo</h2>
+    <div class="timeline">
+        <div class="evento">
+            <img src="imagem/foto1.jpeg">
+            <h3>O dia que tudo começou</h3>
+        </div>
+
+        <div class="evento">
+            <img src="img/beijo.jpg">
+            <h3>Nosso primeiro momento inesquecível</h3>
+        </div>
+    </div>
+</section>
+
+<section>
+  <h2>Nossos Momentos</h2>
+  <div class="carousel">
+    <img src="imagem/foto3.jpeg">
+    <img src="imagem/foto4.jpeg">
+    <img src="imagem/foto5.jpeg">
+  </div>
+</section>
+
+<section>
+  <h2>Jogo da Memória 💘</h2>
+  <p id="game-instruction" style="text-align: center; font-size: 1.2em; font-weight: 600;">Complete o jogo para ganhar seu presente</p>
+  <div class="game" id="game"></div>
+
+  <div id="presentes-container" style="display: none;">
+    <h3 style="text-align: center; margin-bottom: 30px;">Escolha seu presente! 🎁</h3>
+    <div class="presentes-grid">
+      <div class="presente-item presente-fechado" data-presente="jantar">
+        <div class="presente-box presente-box-fechada">
+          ❓
+        </div>
+        <p>Clique para abrir</p>
+      </div>
+      <div class="presente-item presente-fechado" data-presente="especial">
+        <div class="presente-box presente-box-fechada">
+          ❓
+        </div>
+        <p>Clique para abrir</p>
+      </div>
+      <div class="presente-item presente-fechado" data-presente="cinema">
+        <div class="presente-box presente-box-fechada">
+          ❓
+        </div>
+        <p>Clique para abrir</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-presente" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Feito com todo amor só pra você 💖
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
